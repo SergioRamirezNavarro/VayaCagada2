@@ -1,0 +1,115 @@
+body {
+    background-image: linear-gradient(to bottom,
+        #000000,
+        #FF00FF,
+        #FF0000,
+        #FFFF00,
+        #00FF00,
+        #00FFFF,
+        #0000FF,
+        #000000);
+
+    /*
+    background-color: #c0ffc0;
+
+    background-image: 
+    linear-gradient(to right,
+    #FFc000,
+    #808080,
+    #0030FF);
+    */
+    
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+
+}
+
+.frame {
+    border: 2px solid black;
+    padding: 20px;
+    margin: 2px;
+    background-color:rgba(255, 255, 255, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Adjust as needed */
+}
+
+.frame img {
+    display: block;
+    margin: 2 auto;
+    max-width: 100%;
+    height: 300px;
+}
+
+.description {
+    text-align: center;
+}
+
+.navbar {
+    overflow: hidden;
+    width: 100%;
+}
+
+.scrollable {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.description {
+    text-align: center;
+}
+
+.navbar {
+    overflow: hidden;
+    height: 400px;
+    /* Ajusta la altura según tus necesidades */
+}
+
+.scrollable {
+    overflow-y: auto;
+    height: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 20px;
+    /* Ajusta este valor según el tamaño de tus imágenes */
+}
+
+.frame {
+    flex: 0 0 auto;
+    width: 25%;
+    /* Mostrar 4 elementos a la vez */
+    padding: 10px;
+    /* Espacio entre los elementos */
+    box-sizing: border-box;
+}
+
+.carousel {
+    overflow-x: hidden;
+    white-space: nowrap;
+    margin-top: 10px;
+    /* Espacio entre el scrollable y el carrusel */
+}
+
+.carousel .frame {
+    display: inline-block;
+    width: auto;
+}
+
+h2
+{
+    color: #b08000;
+    font: bold;
+}
+
+h3
+{
+    color: #804000;
+}
+ 
+p
+{
+    font: bolder;
+    font-size: large;
+}
