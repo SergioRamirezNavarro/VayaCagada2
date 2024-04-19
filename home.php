@@ -16,7 +16,6 @@ if ($conn->connect_error) {
 // Procesar el formulario si se envió
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $titulo = $_POST["titulo"];
-    $descripcion = $_POST["descripcion"];
 
     // Procesar la imagen
     $image = $_FILES["image"]["name"];
@@ -37,17 +36,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-    // Verificar si el archivo ya existe
-    if (file_exists($target_file)) {
-        echo "Sorry, file already exists.";
-        $uploadOk = 0;
-    }
-
-    // Verificar el tamaño de la imagen
-    if ($_FILES["image"]["size"] > 500000) {
-        echo "Sorry, your file is too large.";
-        $uploadOk = 0;
-    }
     // Permitir ciertos formatos de archivo
     if (
         $imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
@@ -64,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
             // Insertar datos en la tabla usuario
-            $sql = "INSERT INTO mierdas (titulo, imagen, descripcion) VALUES ('$titulo', '$image', '$descripcion')";
+            $sql = "INSERT INTO mierdas (titulo, imagen) VALUES ('$titulo', '$image')";
             if ($conn->query($sql) === TRUE) {
                 echo "Nuevo elemento añadido correctamente";
             } else {
